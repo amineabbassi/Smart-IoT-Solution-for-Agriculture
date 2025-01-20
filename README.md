@@ -76,5 +76,62 @@ This project leverages **ThingSpeak** for data storage and communication, enabli
 ### Step 2: Set Up LoRa Gateway
 1. Connect the **LoRa module** to the Raspberry Pi.
 2. Install the required Python libraries using `pip`:
-   ```bash
-   pip install pyserial requests RPi.GPIO
+   - pip install pyserial requests RPi.GPIO
+3. Configure the ThingSpeak Write and Read API keys in gateway.py.
+4. Run the gateway:
+   - python3 gateway.py
+
+--- 
+
+### Step 3: Set Up Dashboard
+1. Install dependencies:
+   - npm install
+2. Start the development server:
+   - npm run dev
+3. Access the dashboard at http://localhost:5173
+
+---
+
+## Usage
+
+### Sensor Node:
+- Automatically collects and sends temperature and humidity data.
+- Controls the sprinkler based on predefined thresholds.
+
+### Gateway:
+- Receives and uploads sensor data to **ThingSpeak**.
+- Relays sprinkler control commands to the sensor node.
+
+### Dashboard:
+- Displays real-time data.
+- Allows users to toggle the sprinkler on/off.
+
+---
+
+## Troubleshooting
+
+- **LoRa Initialization Error**: Ensure the LoRa module connections and frequency match.
+- **DHT Sensor Read Failures**: Check sensor connections and ensure adequate power supply.
+- **ThingSpeak Communication Issues**: Verify the API keys and internet connectivity.
+
+---
+
+## Notes
+
+- Replace placeholder API keys in the code with your own **ThingSpeak keys**.
+- Modify temperature thresholds or intervals in `esp32_sensor_node.ino` as needed.
+- Use a secure environment for storing sensitive credentials.
+
+---
+
+## License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+## Acknowledgments
+
+Special thanks to the contributors and open-source communities that made this project possible.
+
+
